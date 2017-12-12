@@ -18,6 +18,8 @@ RUN wget \
     tar xzf /tmp/cufflinks.tar.gz && \
     rm /tmp/cufflinks.tar.gz
 
+ENV PATH "$PATH:/opt/cufflinks-2.2.1.Linux_x86_64/"
+
 VOLUME /data
 
 WORKDIR /data
