@@ -10,6 +10,14 @@ RUN apt-get update && apt-get -y install \
     gzip \
     tar
 
+WORKDIR /opt
+
+RUN wget \
+    -O /tmp/cufflinks.tar.gz \
+    'http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz' && \
+    tar xzf /tmp/cufflinks.tar.gz && \
+    rm /tmp/cufflinks.tar.gz
+
 VOLUME /data
 
 WORKDIR /data
